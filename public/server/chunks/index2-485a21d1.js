@@ -61,4 +61,4 @@ function writable(value, start = noop) {
 }
 
 export { readable as r, writable as w };
-//# sourceMappingURL=index2-gv6Eudt_.js.map
+//# sourceMappingURL=index2-485a21d1.js.map

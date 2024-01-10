@@ -8,13 +8,13 @@ const expected = new Set([
 	'XFF_DEPTH',
 	'ADDRESS_HEADER',
 	'PROTOCOL_HEADER',
-	'HOST_HEADER',
-	'PORT_HEADER',
-	'BODY_SIZE_LIMIT'
+	'HOST_HEADER'
 ]);
 
+const processEnv = Deno.env.toObject();
+
 if ("") {
-	for (const name in process.env) {
+	for (const name in processEnv) {
 		if (name.startsWith("")) {
 			const unprefixed = name.slice("".length);
 			if (!expected.has(unprefixed)) {
@@ -32,7 +32,7 @@ if ("") {
  */
 function env(name, fallback) {
 	const prefixed = "" + name;
-	return prefixed in process.env ? process.env[prefixed] : fallback;
+	return prefixed in processEnv ? processEnv[prefixed] : fallback;
 }
 
-export { env };
+export { env, processEnv };

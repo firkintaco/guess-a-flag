@@ -10,10 +10,10 @@ return {
 	assets: new Set(["favicon.png","robots.txt"]),
 	mimeTypes: {".png":"image/png",".txt":"text/plain"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.OGfnWfcu.js","app":"_app/immutable/entry/app.HSt1M7cs.js","imports":["_app/immutable/entry/start.OGfnWfcu.js","_app/immutable/chunks/entry.6EaZ4nds.js","_app/immutable/chunks/runtime.J5xuhOAO.js","_app/immutable/chunks/index.K1lkvplB.js","_app/immutable/entry/app.HSt1M7cs.js","_app/immutable/chunks/runtime.J5xuhOAO.js","_app/immutable/chunks/disclose-version.lJpY8vyd.js","_app/immutable/chunks/main-client.70HNjuXe.js"],"stylesheets":[],"fonts":[],"uses_env_dynamic_public":false},
+		client: {"start":"_app/immutable/entry/start.Qna0adyo.js","app":"_app/immutable/entry/app.2c0CrElz.js","imports":["_app/immutable/entry/start.Qna0adyo.js","_app/immutable/chunks/entry.D_G97f_P.js","_app/immutable/chunks/runtime.J5xuhOAO.js","_app/immutable/chunks/index.K1lkvplB.js","_app/immutable/entry/app.2c0CrElz.js","_app/immutable/chunks/runtime.J5xuhOAO.js","_app/immutable/chunks/disclose-version.lJpY8vyd.js","_app/immutable/chunks/main-client.70HNjuXe.js"],"stylesheets":[],"fonts":[],"uses_env_dynamic_public":false},
 		nodes: [
-			__memo(() => import('./chunks/0-NdR8FSmF.js')),
-			__memo(() => import('./chunks/1-5jY7AlH6.js'))
+			__memo(() => import('./chunks/0-bc8173ea.js')),
+			__memo(() => import('./chunks/1-9ba15154.js'))
 		],
 		routes: [
 			{
@@ -21,14 +21,14 @@ return {
 				pattern: /^\/api\/?$/,
 				params: [],
 				page: null,
-				endpoint: __memo(() => import('./chunks/_server-MbRtTSOz.js'))
+				endpoint: __memo(() => import('./chunks/_server-902a843d.js'))
 			},
 			{
 				id: "/api/scores",
 				pattern: /^\/api\/scores\/?$/,
 				params: [],
 				page: null,
-				endpoint: __memo(() => Promise.resolve().then(function () { return _server; }))
+				endpoint: __memo(() => import('./chunks/_server-4ed993c7.js'))
 			}
 		],
 		matchers: async () => {
@@ -39,11 +39,5 @@ return {
 }
 })();
 
-const prerendered = new Set(["/"]);
-
-var _server = /*#__PURE__*/Object.freeze({
-	__proto__: null
-});
-
-export { manifest, prerendered };
+export { manifest };
 //# sourceMappingURL=manifest.js.map
