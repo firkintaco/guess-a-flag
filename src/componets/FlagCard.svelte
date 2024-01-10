@@ -32,8 +32,8 @@
     {#if $isCorrect}
     <button class="w-full bg-blue-700 px-6 py-4 rounded font-bold text-white shadow" on:click={handleNextCountry}>Next country</button>
     {/if}
-    </div>
     {#if !$isCorrect && $isQuestionAnswered}
-    <button class="w-full bg-blue-700 rounded font-bold text-white shadow px-6 py-4 mt-4" on:click={handleRestart}>Restart</button> 
+    <button class="w-full bg-blue-700 rounded font-bold text-white shadow px-6 py-4" on:click={handleRestart}>Restart</button> 
     {/if}
+    </div>
   </div>
