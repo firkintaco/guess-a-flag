@@ -29,7 +29,7 @@
 {#if $isLoading}
 	<h1>Loading</h1>
 {:else}
-	{#if $countryId >= $countries.length-1}
+	{#if $countryId >= $countries.length}
 	<h1>Refresh page to start again!</h1>
 	{:else}
 		{#if $countries.length !== 0}
