@@ -1,31 +1,36 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import {isLoading, countries, countryId, uuid} from '../stores/store.js';
+	import FlagCard from '../componets/FlagCard.svelte';
+	import { onMount } from 'svelte';
+	let data;
+	let country;
+
+	const fetchData = async() => {
+		$isLoading = true;
+		const response = await fetch("/api").then(response => response.json())
+		$countries = response;
+		country = $countries[0];
+		$isLoading = false;
+	}
+
+	onMount(async ()=>{
+		await fetchData()
+	});
+	console.log(data);
 </script>
 
 <svelte:head>
 	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Quess-A-Flag" />
 </svelte:head>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+{#if $isLoading}
+	<h1>Loading</h1>
+{:else}
+<section class="container mx-auto">
+	{#if $countries.length !== 0}
+	<FlagCard country={$countries[$countryId]} fetchData={fetchData}/>
+	{/if}
 </section>
 
 <style>
@@ -57,3 +62,4 @@
 		display: block;
 	}
 </style>
+{/if}

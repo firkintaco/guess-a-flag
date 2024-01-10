@@ -1,0 +1,148 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "imports": [
+      "_internal.js"
+    ],
+    "isEntry": true,
+    "src": ".svelte-kit/generated/server/internal.js"
+  },
+  "_client.js": {
+    "file": "chunks/client.js",
+    "imports": [
+      "_index.js",
+      "_exports.js"
+    ]
+  },
+  "_exports.js": {
+    "file": "chunks/exports.js"
+  },
+  "_index.js": {
+    "file": "chunks/index.js"
+  },
+  "_index2.js": {
+    "file": "chunks/index2.js"
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "imports": [
+      "_index.js",
+      "_main-client.js",
+      "_validate.js"
+    ]
+  },
+  "_main-client.js": {
+    "file": "chunks/main-client.js",
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "_store.js": {
+    "file": "chunks/store.js",
+    "imports": [
+      "_index2.js"
+    ]
+  },
+  "_validate.js": {
+    "file": "chunks/validate.js",
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-all-400-normal.woff": {
+    "file": "_app/immutable/assets/fira-mono-all-400-normal.dpry7Ug7.woff",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-all-400-normal.woff"
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-cyrillic-400-normal.woff2": {
+    "file": "_app/immutable/assets/fira-mono-cyrillic-400-normal.N-vuOVMo.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-cyrillic-400-normal.woff2"
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-cyrillic-ext-400-normal.woff2": {
+    "file": "_app/immutable/assets/fira-mono-cyrillic-ext-400-normal.dOGCK5uJ.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-cyrillic-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-greek-400-normal.woff2": {
+    "file": "_app/immutable/assets/fira-mono-greek-400-normal.At854Oju.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-greek-400-normal.woff2"
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-greek-ext-400-normal.woff2": {
+    "file": "_app/immutable/assets/fira-mono-greek-ext-400-normal.rKiNtwjr.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-greek-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-latin-400-normal.woff2": {
+    "file": "_app/immutable/assets/fira-mono-latin-400-normal.yoy1YEIp.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-latin-400-normal.woff2"
+  },
+  "node_modules/@fontsource/fira-mono/files/fira-mono-latin-ext-400-normal.woff2": {
+    "file": "_app/immutable/assets/fira-mono-latin-ext-400-normal.-l34kfv6.woff2",
+    "src": "node_modules/@fontsource/fira-mono/files/fira-mono-latin-ext-400-normal.woff2"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "imports": [
+      "_index.js",
+      "_main-client.js",
+      "_client.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "imports": [
+      "_internal.js",
+      "_exports.js",
+      "_index2.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js"
+  },
+  "src/routes/+layout.svelte": {
+    "assets": [
+      "_app/immutable/assets/fira-mono-cyrillic-ext-400-normal.dOGCK5uJ.woff2",
+      "_app/immutable/assets/fira-mono-all-400-normal.dpry7Ug7.woff",
+      "_app/immutable/assets/fira-mono-cyrillic-400-normal.N-vuOVMo.woff2",
+      "_app/immutable/assets/fira-mono-greek-ext-400-normal.rKiNtwjr.woff2",
+      "_app/immutable/assets/fira-mono-greek-400-normal.At854Oju.woff2",
+      "_app/immutable/assets/fira-mono-latin-ext-400-normal.-l34kfv6.woff2",
+      "_app/immutable/assets/fira-mono-latin-400-normal.yoy1YEIp.woff2"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.5nKRundU.css"
+    ],
+    "file": "entries/pages/_layout.svelte.js",
+    "imports": [
+      "_index.js",
+      "_client.js",
+      "_store.js",
+      "_validate.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/+layout.svelte"
+  },
+  "src/routes/+page.js": {
+    "file": "entries/pages/_page.js",
+    "isEntry": true,
+    "src": "src/routes/+page.js"
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "imports": [
+      "_index.js",
+      "_store.js",
+      "_validate.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/+page.svelte"
+  },
+  "src/routes/api/+server.js": {
+    "file": "entries/endpoints/api/_server.js",
+    "isEntry": true,
+    "src": "src/routes/api/+server.js"
+  },
+  "src/routes/api/scores/+server.js": {
+    "file": "entries/endpoints/api/scores/_server.js",
+    "isEntry": true,
+    "src": "src/routes/api/scores/+server.js"
+  }
+}

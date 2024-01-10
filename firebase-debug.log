@@ -1,0 +1,283 @@
+[debug] [2024-01-10T16:32:09.466Z] ----------------------------------------------------------------------
+[debug] [2024-01-10T16:32:09.469Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-10T16:32:09.469Z] CLI Version:   13.0.3
+[debug] [2024-01-10T16:32:09.469Z] Platform:      win32
+[debug] [2024-01-10T16:32:09.469Z] Node Version:  v21.2.0
+[debug] [2024-01-10T16:32:09.470Z] Time:          Wed Jan 10 2024 18:32:09 GMT+0200 (Itä-Euroopan normaaliaika)
+[debug] [2024-01-10T16:32:09.470Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-10T16:32:09.535Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-10T16:32:09.535Z] > authorizing via signed-in user (firkintaco@gmail.com)
+[debug] [2024-01-10T16:32:09.535Z] [iam] checking project quess-flag for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-10T16:32:09.537Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions [none]
+[debug] [2024-01-10T16:32:09.537Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions x-goog-quota-user=projects/quess-flag
+[debug] [2024-01-10T16:32:09.537Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T16:32:10.449Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions 200
+[debug] [2024-01-10T16:32:10.450Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T16:32:10.450Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag [none]
+[debug] [2024-01-10T16:32:10.784Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag 200
+[debug] [2024-01-10T16:32:10.784Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag {"projectId":"quess-flag","projectNumber":"1097862029254","displayName":"quess-flag","name":"projects/quess-flag","resources":{"hostingSite":"quess-flag"},"state":"ACTIVE","etag":"1_3ac66a5b-87a6-4810-be29-94e779fc469d"}
+[info] 
+   Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
+   While this integration is maintained by Googlers it is not a supported Firebase product.
+   Issues filed on GitHub will be addressed on a best-effort basis by maintainers and other community members.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/frameworks-overview
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[warn] !  This integration expects Node version 16, 18, or 20. You're running version 21, problems may be encountered. 
+[debug] [2024-01-10T16:32:43.514Z] Error: Command failed: npm i --omit dev --no-audit
+    at genericNodeError (node:internal/errors:956:15)
+    at wrappedFn (node:internal/errors:510:14)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at prepareFrameworks (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:372:42)
+    at async deploy (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:55:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-01-10T16:35:35.690Z] ----------------------------------------------------------------------
+[debug] [2024-01-10T16:35:35.693Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-10T16:35:35.694Z] CLI Version:   13.0.3
+[debug] [2024-01-10T16:35:35.694Z] Platform:      win32
+[debug] [2024-01-10T16:35:35.694Z] Node Version:  v21.2.0
+[debug] [2024-01-10T16:35:35.694Z] Time:          Wed Jan 10 2024 18:35:35 GMT+0200 (Itä-Euroopan normaaliaika)
+[debug] [2024-01-10T16:35:35.694Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-10T16:35:35.771Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-10T16:35:35.771Z] > authorizing via signed-in user (firkintaco@gmail.com)
+[debug] [2024-01-10T16:35:35.771Z] [iam] checking project quess-flag for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-10T16:35:35.773Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions [none]
+[debug] [2024-01-10T16:35:35.773Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions x-goog-quota-user=projects/quess-flag
+[debug] [2024-01-10T16:35:35.774Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T16:35:36.725Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions 200
+[debug] [2024-01-10T16:35:36.725Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T16:35:36.727Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag [none]
+[debug] [2024-01-10T16:35:37.194Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag 200
+[debug] [2024-01-10T16:35:37.194Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag {"projectId":"quess-flag","projectNumber":"1097862029254","displayName":"quess-flag","name":"projects/quess-flag","resources":{"hostingSite":"quess-flag"},"state":"ACTIVE","etag":"1_3ac66a5b-87a6-4810-be29-94e779fc469d"}
+[info] 
+   Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
+   While this integration is maintained by Googlers it is not a supported Firebase product.
+   Issues filed on GitHub will be addressed on a best-effort basis by maintainers and other community members.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/frameworks-overview
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[warn] !  This integration expects Node version 16, 18, or 20. You're running version 21, problems may be encountered. 
+[debug] [2024-01-10T16:35:56.324Z] Error: Command failed: npm i --omit dev --no-audit
+    at genericNodeError (node:internal/errors:956:15)
+    at wrappedFn (node:internal/errors:510:14)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at prepareFrameworks (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:372:42)
+    at async deploy (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:55:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-01-10T16:36:15.521Z] ----------------------------------------------------------------------
+[debug] [2024-01-10T16:36:15.524Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-10T16:36:15.524Z] CLI Version:   13.0.3
+[debug] [2024-01-10T16:36:15.525Z] Platform:      win32
+[debug] [2024-01-10T16:36:15.525Z] Node Version:  v21.2.0
+[debug] [2024-01-10T16:36:15.525Z] Time:          Wed Jan 10 2024 18:36:15 GMT+0200 (Itä-Euroopan normaaliaika)
+[debug] [2024-01-10T16:36:15.525Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-10T16:36:15.589Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-10T16:36:15.589Z] > authorizing via signed-in user (firkintaco@gmail.com)
+[debug] [2024-01-10T16:36:15.589Z] [iam] checking project quess-flag for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-10T16:36:15.591Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions [none]
+[debug] [2024-01-10T16:36:15.591Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions x-goog-quota-user=projects/quess-flag
+[debug] [2024-01-10T16:36:15.591Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T16:36:16.477Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions 200
+[debug] [2024-01-10T16:36:16.477Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T16:36:16.478Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag [none]
+[debug] [2024-01-10T16:36:16.831Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag 200
+[debug] [2024-01-10T16:36:16.831Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag {"projectId":"quess-flag","projectNumber":"1097862029254","displayName":"quess-flag","name":"projects/quess-flag","resources":{"hostingSite":"quess-flag"},"state":"ACTIVE","etag":"1_3ac66a5b-87a6-4810-be29-94e779fc469d"}
+[info] 
+   Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
+   While this integration is maintained by Googlers it is not a supported Firebase product.
+   Issues filed on GitHub will be addressed on a best-effort basis by maintainers and other community members.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/frameworks-overview
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[warn] !  This integration expects Node version 16, 18, or 20. You're running version 21, problems may be encountered. 
+[debug] [2024-01-10T16:36:36.255Z] Error: Command failed: npm i --omit dev --no-audit
+    at genericNodeError (node:internal/errors:956:15)
+    at wrappedFn (node:internal/errors:510:14)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at prepareFrameworks (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:372:42)
+    at async deploy (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:55:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-01-10T16:36:55.996Z] ----------------------------------------------------------------------
+[debug] [2024-01-10T16:36:55.999Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-10T16:36:56.000Z] CLI Version:   13.0.3
+[debug] [2024-01-10T16:36:56.000Z] Platform:      win32
+[debug] [2024-01-10T16:36:56.000Z] Node Version:  v21.2.0
+[debug] [2024-01-10T16:36:56.000Z] Time:          Wed Jan 10 2024 18:36:56 GMT+0200 (Itä-Euroopan normaaliaika)
+[debug] [2024-01-10T16:36:56.000Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-10T16:36:56.069Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-10T16:36:56.070Z] > authorizing via signed-in user (firkintaco@gmail.com)
+[debug] [2024-01-10T16:36:56.070Z] [iam] checking project quess-flag for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-10T16:36:56.072Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions [none]
+[debug] [2024-01-10T16:36:56.072Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions x-goog-quota-user=projects/quess-flag
+[debug] [2024-01-10T16:36:56.072Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T16:36:56.956Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions 200
+[debug] [2024-01-10T16:36:56.957Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T16:36:56.957Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag [none]
+[debug] [2024-01-10T16:36:57.274Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag 200
+[debug] [2024-01-10T16:36:57.274Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag {"projectId":"quess-flag","projectNumber":"1097862029254","displayName":"quess-flag","name":"projects/quess-flag","resources":{"hostingSite":"quess-flag"},"state":"ACTIVE","etag":"1_3ac66a5b-87a6-4810-be29-94e779fc469d"}
+[info] 
+   Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
+   While this integration is maintained by Googlers it is not a supported Firebase product.
+   Issues filed on GitHub will be addressed on a best-effort basis by maintainers and other community members.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/frameworks-overview
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[warn] !  This integration expects Node version 16, 18, or 20. You're running version 21, problems may be encountered. 
+[debug] [2024-01-10T16:37:17.101Z] Error: Command failed: npm i --omit dev --no-audit
+    at genericNodeError (node:internal/errors:956:15)
+    at wrappedFn (node:internal/errors:510:14)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at prepareFrameworks (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:372:42)
+    at async deploy (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:55:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-01-10T16:38:19.535Z] ----------------------------------------------------------------------
+[debug] [2024-01-10T16:38:19.538Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-10T16:38:19.539Z] CLI Version:   13.0.3
+[debug] [2024-01-10T16:38:19.539Z] Platform:      win32
+[debug] [2024-01-10T16:38:19.539Z] Node Version:  v21.2.0
+[debug] [2024-01-10T16:38:19.539Z] Time:          Wed Jan 10 2024 18:38:19 GMT+0200 (Itä-Euroopan normaaliaika)
+[debug] [2024-01-10T16:38:19.539Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-10T16:38:19.604Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-10T16:38:19.605Z] > authorizing via signed-in user (firkintaco@gmail.com)
+[debug] [2024-01-10T16:38:19.605Z] [iam] checking project quess-flag for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-10T16:38:19.607Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions [none]
+[debug] [2024-01-10T16:38:19.607Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions x-goog-quota-user=projects/quess-flag
+[debug] [2024-01-10T16:38:19.607Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T16:38:20.484Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions 200
+[debug] [2024-01-10T16:38:20.484Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T16:38:20.485Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag [none]
+[debug] [2024-01-10T16:38:20.922Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag 200
+[debug] [2024-01-10T16:38:20.923Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag {"projectId":"quess-flag","projectNumber":"1097862029254","displayName":"quess-flag","name":"projects/quess-flag","resources":{"hostingSite":"quess-flag"},"state":"ACTIVE","etag":"1_3ac66a5b-87a6-4810-be29-94e779fc469d"}
+[info] 
+   Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
+   While this integration is maintained by Googlers it is not a supported Firebase product.
+   Issues filed on GitHub will be addressed on a best-effort basis by maintainers and other community members.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/frameworks-overview
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[warn] !  This integration expects Node version 16, 18, or 20. You're running version 21, problems may be encountered. 
+[debug] [2024-01-10T16:38:48.128Z] Error: Command failed: npm i --omit dev --no-audit
+    at genericNodeError (node:internal/errors:956:15)
+    at wrappedFn (node:internal/errors:510:14)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at prepareFrameworks (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:372:42)
+    at async deploy (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:55:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-01-10T16:40:26.094Z] ----------------------------------------------------------------------
+[debug] [2024-01-10T16:40:26.097Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-10T16:40:26.098Z] CLI Version:   13.0.3
+[debug] [2024-01-10T16:40:26.098Z] Platform:      win32
+[debug] [2024-01-10T16:40:26.098Z] Node Version:  v21.2.0
+[debug] [2024-01-10T16:40:26.098Z] Time:          Wed Jan 10 2024 18:40:26 GMT+0200 (Itä-Euroopan normaaliaika)
+[debug] [2024-01-10T16:40:26.098Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-10T16:40:26.162Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-10T16:40:26.162Z] > authorizing via signed-in user (firkintaco@gmail.com)
+[debug] [2024-01-10T16:40:26.162Z] [iam] checking project quess-flag for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-10T16:40:26.164Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions [none]
+[debug] [2024-01-10T16:40:26.164Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions x-goog-quota-user=projects/quess-flag
+[debug] [2024-01-10T16:40:26.164Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T16:40:27.097Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions 200
+[debug] [2024-01-10T16:40:27.097Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T16:40:27.099Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag [none]
+[debug] [2024-01-10T16:40:27.613Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag 200
+[debug] [2024-01-10T16:40:27.613Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag {"projectId":"quess-flag","projectNumber":"1097862029254","displayName":"quess-flag","name":"projects/quess-flag","resources":{"hostingSite":"quess-flag"},"state":"ACTIVE","etag":"1_3ac66a5b-87a6-4810-be29-94e779fc469d"}
+[info] 
+   Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
+   While this integration is maintained by Googlers it is not a supported Firebase product.
+   Issues filed on GitHub will be addressed on a best-effort basis by maintainers and other community members.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/frameworks-overview
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-01-10T16:40:44.544Z] Error: Encountered dynamic routes
+    at adapt (file:///C:/Users/firki/Desktop/side-projects/quess-a-flag/node_modules/@sveltejs/adapter-static/index.js:38:12)
+    at adapt (file:///C:/Users/firki/Desktop/side-projects/quess-a-flag/node_modules/@sveltejs/kit/src/core/adapt/index.js:37:8)
+    at finalise (file:///C:/Users/firki/Desktop/side-projects/quess-a-flag/node_modules/@sveltejs/kit/src/exports/vite/index.js:858:13)
+    at async Object.handler (file:///C:/Users/firki/Desktop/side-projects/quess-a-flag/node_modules/@sveltejs/kit/src/exports/vite/index.js:888:5)
+    at async PluginDriver.hookParallel (file:///C:/Users/firki/Desktop/side-projects/quess-a-flag/node_modules/rollup/dist/es/shared/node-entry.js:18592:17)
+    at async Object.close (file:///C:/Users/firki/Desktop/side-projects/quess-a-flag/node_modules/rollup/dist/es/shared/node-entry.js:19522:13)
+    at async Module.build (file:///C:/Users/firki/Desktop/side-projects/quess-a-flag/node_modules/vite/dist/node/chunks/dep-V3BH7oO1.js:67188:13)
+    at async build (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\vite\index.js:76:5)
+    at async build (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\sveltekit\index.js:20:5)
+    at async prepareFrameworks (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:221:33)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-01-10T16:47:40.281Z] ----------------------------------------------------------------------
+[debug] [2024-01-10T16:47:40.284Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-10T16:47:40.285Z] CLI Version:   13.0.3
+[debug] [2024-01-10T16:47:40.285Z] Platform:      win32
+[debug] [2024-01-10T16:47:40.285Z] Node Version:  v21.2.0
+[debug] [2024-01-10T16:47:40.285Z] Time:          Wed Jan 10 2024 18:47:40 GMT+0200 (Itä-Euroopan normaaliaika)
+[debug] [2024-01-10T16:47:40.285Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-10T16:47:40.348Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-10T16:47:40.348Z] > authorizing via signed-in user (firkintaco@gmail.com)
+[debug] [2024-01-10T16:47:40.348Z] [iam] checking project quess-flag for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-10T16:47:40.350Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions [none]
+[debug] [2024-01-10T16:47:40.350Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions x-goog-quota-user=projects/quess-flag
+[debug] [2024-01-10T16:47:40.350Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T16:47:41.332Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions 200
+[debug] [2024-01-10T16:47:41.333Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quess-flag:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T16:47:41.335Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag [none]
+[debug] [2024-01-10T16:47:41.808Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag 200
+[debug] [2024-01-10T16:47:41.808Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quess-flag {"projectId":"quess-flag","projectNumber":"1097862029254","displayName":"quess-flag","name":"projects/quess-flag","resources":{"hostingSite":"quess-flag"},"state":"ACTIVE","etag":"1_3ac66a5b-87a6-4810-be29-94e779fc469d"}
+[info] 
+   Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
+   While this integration is maintained by Googlers it is not a supported Firebase product.
+   Issues filed on GitHub will be addressed on a best-effort basis by maintainers and other community members.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/frameworks-overview
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[warn] !  This integration expects Node version 16, 18, or 20. You're running version 21, problems may be encountered. 
+[debug] [2024-01-10T16:48:12.608Z] Error: Command failed: npm i --omit dev --no-audit
+    at genericNodeError (node:internal/errors:956:15)
+    at wrappedFn (node:internal/errors:510:14)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at prepareFrameworks (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:372:42)
+    at async deploy (C:\Users\firki\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:55:13)
+[error] 
+[error] Error: An unexpected error has occurred.
