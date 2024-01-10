@@ -25,12 +25,17 @@
 	<meta name="description" content="Quess-A-Flag" />
 </svelte:head>
 
+<section class="container mx-auto">
 {#if $isLoading}
 	<h1>Loading</h1>
 {:else}
-<section class="container mx-auto">
-	{#if $countries.length !== 0}
-	<FlagCard country={$countries[$countryId]} fetchData={fetchData}/>
+	{#if $countryId >= $countries.length-1}
+	<h1>Refresh page to start again!</h1>
+	{:else}
+		{#if $countries.length !== 0}
+			<FlagCard country={$countries[$countryId]} fetchData={fetchData}/>
+		{/if}
+	{/if}
 	{/if}
 </section>
 
@@ -48,4 +53,3 @@
 	}
 
 </style>
-{/if}
