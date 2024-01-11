@@ -1,4 +1,13 @@
-import { collection, getDocs, setDoc, doc, query, orderBy, limit } from 'firebase/firestore';
+import {
+	collection,
+	getDocs,
+	getDoc,
+	setDoc,
+	doc,
+	query,
+	orderBy,
+	limit
+} from 'firebase/firestore';
 import { db } from '../../../../firebase.app';
 
 const getUsers = async () => {
@@ -31,7 +40,10 @@ export const POST = async ({ url }) => {
 		const parsedNumber = Number(score);
 		const userCollection = collection(db, 'scores');
 		const userRef = doc(userCollection, id);
-		await setDoc(userRef, { id, score: parsedNumber });
+		const userDoc = await getDoc(userRef);
+		if (userDoc.data().score < parsedNumber) {
+			await setDoc(userRef, { id, score: parsedNumber });
+		}
 		return new Response('OK', { status: 200 });
 	} catch (error) {
 		return new Response('Fail', { status: 400 });

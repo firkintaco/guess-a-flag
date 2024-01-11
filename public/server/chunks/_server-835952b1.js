@@ -1,4 +1,4 @@
-import { c as collection, a as db, d as doc, s as setDoc, q as query, l as limit, o as orderBy, g as getDocs } from './firebase.app-ef5f3899.js';
+import { c as collection, a as db, d as doc, b as getDoc, s as setDoc, q as query, l as limit, o as orderBy, g as getDocs } from './firebase.app-ef5f3899.js';
 
 const getUsers = async () => {
   const userCollection = collection(db, "scores");
@@ -28,7 +28,10 @@ const POST = async ({ url }) => {
     const parsedNumber = Number(score);
     const userCollection = collection(db, "scores");
     const userRef = doc(userCollection, id);
-    await setDoc(userRef, { id, score: parsedNumber });
+    const userDoc = await getDoc(userRef);
+    if (userDoc.data().score < parsedNumber) {
+      await setDoc(userRef, { id, score: parsedNumber });
+    }
     return new Response("OK", { status: 200 });
   } catch (error) {
     return new Response("Fail", { status: 400 });
@@ -36,4 +39,4 @@ const POST = async ({ url }) => {
 };
 
 export { GET, POST };
-//# sourceMappingURL=_server-11a54a52.js.map
+//# sourceMappingURL=_server-835952b1.js.map
