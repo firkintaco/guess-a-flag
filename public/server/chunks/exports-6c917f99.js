@@ -773,10 +773,6 @@ function escape_text(value) {
   const escaped = escape(value);
   return escaped === "" ? " " : escaped;
 }
-function head(payload, fn) {
-  const head_payload = payload.head;
-  fn(head_payload);
-}
 function store_get(store_values, store_name, store) {
   if (store_name in store_values && store_values[store_name][0] === store) {
     return store_values[store_name][2];
@@ -814,13 +810,141 @@ function bind_props(props_parent, props_now) {
     }
   }
 }
-function ensure_array_like(array_like_or_iterator) {
-  return array_like_or_iterator?.length !== void 0 ? array_like_or_iterator : Array.from(array_like_or_iterator);
-}
 function create_anchor(payload) {
   const depth = payload.anchor++;
   return `<!--ssr:${depth}-->`;
 }
 
-export { slot as A, escape as B, store_get as C, unsubscribe_stores as D, escape_text as E, get_or_init_context_map as F, head as G, ensure_array_like as H, UNINITIALIZED as U, render_effect as a, pop$1 as b, current_component_context as c, define_property as d, array_from as e, destroy_signal as f, push as g, copy_payload as h, assign_payload as i, bind_props as j, pop as k, is_array as l, set as m, effect_active as n, object_keys as o, push$1 as p, updating_derived as q, render as r, source as s, get_descriptor as t, update as u, mutable_source as v, get as w, object_assign as x, flushSync as y, create_anchor as z };
-//# sourceMappingURL=index-35d41c90.js.map
+const internal = new URL("sveltekit-internal://");
+function resolve(base, path) {
+  if (path[0] === "/" && path[1] === "/")
+    return path;
+  let url = new URL(base, internal);
+  url = new URL(path, url);
+  return url.protocol === internal.protocol ? url.pathname + url.search + url.hash : url.href;
+}
+function normalize_path(path, trailing_slash) {
+  if (path === "/" || trailing_slash === "ignore")
+    return path;
+  if (trailing_slash === "never") {
+    return path.endsWith("/") ? path.slice(0, -1) : path;
+  } else if (trailing_slash === "always" && !path.endsWith("/")) {
+    return path + "/";
+  }
+  return path;
+}
+function decode_pathname(pathname) {
+  return pathname.split("%25").map(decodeURI).join("%25");
+}
+function decode_params(params) {
+  for (const key in params) {
+    params[key] = decodeURIComponent(params[key]);
+  }
+  return params;
+}
+const tracked_url_properties = (
+  /** @type {const} */
+  [
+    "href",
+    "pathname",
+    "search",
+    "toString",
+    "toJSON"
+  ]
+);
+function make_trackable(url, callback, search_params_callback) {
+  const tracked = new URL(url);
+  Object.defineProperty(tracked, "searchParams", {
+    value: new Proxy(tracked.searchParams, {
+      get(obj, key) {
+        if (key === "get" || key === "getAll" || key === "has") {
+          return (param) => {
+            search_params_callback(param);
+            return obj[key](param);
+          };
+        }
+        callback();
+        const value = Reflect.get(obj, key);
+        return typeof value === "function" ? value.bind(obj) : value;
+      }
+    }),
+    enumerable: true,
+    configurable: true
+  });
+  for (const property of tracked_url_properties) {
+    Object.defineProperty(tracked, property, {
+      get() {
+        callback();
+        return url[property];
+      },
+      enumerable: true,
+      configurable: true
+    });
+  }
+  {
+    tracked[Symbol.for("nodejs.util.inspect.custom")] = (depth, opts, inspect) => {
+      return inspect(url, opts);
+    };
+  }
+  {
+    disable_hash(tracked);
+  }
+  return tracked;
+}
+function disable_hash(url) {
+  allow_nodejs_console_log(url);
+  Object.defineProperty(url, "hash", {
+    get() {
+      throw new Error(
+        "Cannot access event.url.hash. Consider using `$page.url.hash` inside a component instead"
+      );
+    }
+  });
+}
+function disable_search(url) {
+  allow_nodejs_console_log(url);
+  for (const property of ["search", "searchParams"]) {
+    Object.defineProperty(url, property, {
+      get() {
+        throw new Error(`Cannot access url.${property} on a page with prerendering enabled`);
+      }
+    });
+  }
+}
+function allow_nodejs_console_log(url) {
+  {
+    url[Symbol.for("nodejs.util.inspect.custom")] = (depth, opts, inspect) => {
+      return inspect(new URL(url), opts);
+    };
+  }
+}
+const DATA_SUFFIX = "/__data.json";
+const HTML_DATA_SUFFIX = ".html__data.json";
+function has_data_suffix(pathname) {
+  return pathname.endsWith(DATA_SUFFIX) || pathname.endsWith(HTML_DATA_SUFFIX);
+}
+function add_data_suffix(pathname) {
+  if (pathname.endsWith(".html"))
+    return pathname.replace(/\.html$/, HTML_DATA_SUFFIX);
+  return pathname.replace(/\/$/, "") + DATA_SUFFIX;
+}
+function strip_data_suffix(pathname) {
+  if (pathname.endsWith(HTML_DATA_SUFFIX)) {
+    return pathname.slice(0, -HTML_DATA_SUFFIX.length) + ".html";
+  }
+  return pathname.slice(0, -DATA_SUFFIX.length);
+}
+const valid_layout_exports = /* @__PURE__ */ new Set([
+  "load",
+  "prerender",
+  "csr",
+  "ssr",
+  "trailingSlash",
+  "config"
+]);
+/* @__PURE__ */ new Set([...valid_layout_exports, "entries"]);
+const valid_layout_server_exports = /* @__PURE__ */ new Set([...valid_layout_exports]);
+/* @__PURE__ */ new Set([...valid_layout_server_exports, "actions", "entries"]);
+
+export { decode_pathname as A, has_data_suffix as B, strip_data_suffix as C, decode_params as D, normalize_path as E, disable_search as F, add_data_suffix as G, make_trackable as H, resolve as I, slot as J, escape as K, store_get as L, unsubscribe_stores as M, escape_text as N, get_or_init_context_map as O, UNINITIALIZED as U, render_effect as a, pop$1 as b, current_component_context as c, define_property as d, array_from as e, destroy_signal as f, push as g, copy_payload as h, assign_payload as i, bind_props as j, pop as k, is_array as l, set as m, effect_active as n, object_keys as o, push$1 as p, updating_derived as q, render as r, source as s, get_descriptor as t, update as u, mutable_source as v, get as w, object_assign as x, flushSync as y, create_anchor as z };
+//# sourceMappingURL=exports-6c917f99.js.map

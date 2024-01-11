@@ -1,4 +1,4 @@
-import './exports-4ef2d035.js';
+import './exports-6c917f99.js';
 
 function get(key, parse = JSON.parse) {
   try {
@@ -10,4 +10,4 @@ const SNAPSHOT_KEY = "sveltekit:snapshot";
 const SCROLL_KEY = "sveltekit:scroll";
 get(SCROLL_KEY) ?? {};
 get(SNAPSHOT_KEY) ?? {};
-//# sourceMappingURL=client-a19d47e8.js.map
+//# sourceMappingURL=client-35cdde14.js.map

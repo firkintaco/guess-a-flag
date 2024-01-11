@@ -1,3 +1,5 @@
+import { z as create_anchor, J as slot, k as pop, K as escape, L as store_get, M as unsubscribe_stores, g as push } from './exports-6c917f99.js';
+import './client-35cdde14.js';
 import { w as writable } from './index2-485a21d1.js';
 
 let clean = Symbol('clean');
@@ -241,5 +243,24 @@ function persistentAtom(name, initial = undefined, opts = {}) {
 const score = writable(0);
 persistentAtom("user_uuid", crypto.randomUUID().toString());
 
-export { score as s };
-//# sourceMappingURL=store-4509874f.js.map
+function Header($$payload, $$props) {
+  push(false);
+  const $$store_subs = {};
+  $$payload.out += `<header class="shadow p-4"><div class="container mx-auto flex justify-between items-baseline align-baseline"><h1 class="text-2xl">Guess-A-Flag</h1> <div><span class="font-bold text-nowrap">Score: ${escape(store_get($$store_subs, "$score", score))}</span></div></div></header>`;
+  unsubscribe_stores($$store_subs);
+  pop();
+}
+function _layout($$payload, $$props) {
+  push(false);
+  const anchor = create_anchor($$payload);
+  const anchor_1 = create_anchor($$payload);
+  $$payload.out += `<div class="app svelte-85l81p">${anchor}`;
+  Header($$payload);
+  $$payload.out += `${anchor} <main class="svelte-85l81p">${anchor_1}`;
+  slot($$payload, $$props.children, {}, null);
+  $$payload.out += `${anchor_1}</main></div>`;
+  pop();
+}
+
+export { _layout as default };
+//# sourceMappingURL=_layout.svelte-6382028e.js.map
