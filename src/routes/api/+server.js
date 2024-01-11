@@ -1,5 +1,5 @@
-import { collection, getDocs, query, where, getDoc, doc } from 'firebase/firestore';
-import { db } from '../../../firebase.app';
+import { collection, getDocs, getDoc, doc } from 'firebase/firestore';
+import { db } from '../../../firebase.app.js';
 
 const shuffle = (array) => {
 	return array.sort((a, b) => 0.5 - Math.random());

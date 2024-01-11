@@ -5,21 +5,12 @@
 
 <header class="shadow p-4">
 	<div class="container mx-auto flex justify-between items-baseline align-baseline">
-		<h1 class="text-2xl">Quess-A-Flag</h1>
+		<h1 class="text-2xl">Guess-A-Flag</h1>
 	<div><span class="font-bold text-nowrap">Score: {$score}</span></div>
 	</div>
 </header>
 
 <style>
-	header {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	.corner {
-		width: 3em;
-		height: 3em;
-	}
 
 	.corner a {
 		display: flex;
