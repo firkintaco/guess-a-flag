@@ -33,9 +33,10 @@ const POST = async ({ url }) => {
     }
     return new Response("OK", { status: 200 });
   } catch (error) {
+    console.log("Error adding score " + error);
     return new Response("Fail", { status: 400 });
   }
 };
 
 export { GET, POST };
-//# sourceMappingURL=_server-d0256f1a.js.map
+//# sourceMappingURL=_server-5f7377c3.js.map
