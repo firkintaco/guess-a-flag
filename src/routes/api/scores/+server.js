@@ -45,6 +45,7 @@ export const POST = async ({ url }) => {
 		}
 		return new Response('OK', { status: 200 });
 	} catch (error) {
+		console.log('Error adding score ' + error);
 		return new Response('Fail', { status: 400 });
 	}
 };
