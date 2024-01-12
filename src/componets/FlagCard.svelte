@@ -1,6 +1,6 @@
 <script>
 	import AnswerOptionButton from "./AnswerOptionButton.svelte";
-    import {isCorrect,countryId, score, isQuestionAnswered, isLoading, uuid} from '../stores/store.js';
+    import {isCorrect,countryId, score, isQuestionAnswered, isLoading, uuid, isError} from '../stores/store.js';
     export let country;
     export let fetchData;
     let isAlreadyAnswered = false;
@@ -11,9 +11,14 @@
         $isQuestionAnswered = false;
     }
     const handleRestart = async () => {
-        await fetch(`/api/scores?id=${$uuid}&score=${$score}`, {
-            method: "POST",
-        })
+        try {
+            await fetch(`/api/scores?id=${$uuid}&score=${$score}`, {
+                method: "POST",
+            })
+            
+        } catch (error) {
+            $isError = error;
+        }
         fetchData();
         $isQuestionAnswered = false;
         $score = 0;

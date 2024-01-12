@@ -1,5 +1,5 @@
 <script>
-	import {isLoading, countries, countryId, uuid} from '../stores/store.js';
+	import {isLoading, countries, countryId, uuid, isError} from '../stores/store.js';
 	import FlagCard from '../componets/FlagCard.svelte';
 	import { onMount } from 'svelte';
 	let data;
@@ -26,6 +26,9 @@
 </svelte:head>
 
 <section class="container mx-auto">
+	{#if $isError}
+	<p>Error</p>
+	{/if}
 {#if $isLoading}
 	<h1 class="text-center">Loading</h1>
 {:else}

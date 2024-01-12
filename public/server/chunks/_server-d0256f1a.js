@@ -20,7 +20,6 @@ const GET = async () => {
 const POST = async ({ url }) => {
   const id = url.searchParams.get("id");
   const score = url.searchParams.get("score");
-  console.log(url);
   if (!id || !score) {
     return new Response("Fail", { status: 400 });
   }
@@ -39,4 +38,4 @@ const POST = async ({ url }) => {
 };
 
 export { GET, POST };
-//# sourceMappingURL=_server-835952b1.js.map
+//# sourceMappingURL=_server-d0256f1a.js.map

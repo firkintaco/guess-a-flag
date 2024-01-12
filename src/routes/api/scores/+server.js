@@ -32,7 +32,6 @@ export const GET = async () => {
 export const POST = async ({ url }) => {
 	const id = url.searchParams.get('id');
 	const score = url.searchParams.get('score');
-	console.log(url);
 	if (!id || !score) {
 		return new Response('Fail', { status: 400 });
 	}
