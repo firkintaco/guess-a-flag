@@ -34,7 +34,8 @@
 		"@sveltejs/adapter-node": "^2.1.1",
 		"@sveltejs/adapter-static": "^3.0.1",
 		"nanostores": "^0.9.5",
-		"svelte-adapter-deno": "^0.9.0"
+		"svelte-adapter-deno": "^0.9.0",
+		"tw-elements": "^1.1.0"
 	},
 	"engines": {
 		"node": "v21.2.0",

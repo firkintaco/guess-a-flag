@@ -3,90 +3,41 @@
 	import {score} from '../stores/store.js'
 </script>
 
-<header class="shadow p-4">
-	<div class="container mx-auto flex justify-between items-baseline align-baseline">
-		<h1 class="text-2xl">Guess-A-Flag</h1>
-	<div><span class="font-bold text-nowrap">Score: {$score}</span></div>
-	</div>
+<header class="shadow px-4 bg-[#FBFBFB]">
+ <nav
+  class="relative flex w-full flex-nowrap items-center justify-between bg-[#FBFBFB] py-2 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:flex-wrap lg:justify-start lg:py-4"
+  data-te-navbar-ref>
+  <div class="flex w-full flex-wrap items-center justify-between px-3">
+    <div class="ml-2">
+      <a class="text-xl text-neutral-800 dark:text-neutral-200" href="/"
+        >Guess-A-Flag</a
+      >
+    </div>
+    
+
+
+      <!-- Left links -->
+	  <ul class="flex">
+		<li class="mr-3">
+		  <a class="normal-link" href="/" class:active="{$page.url.pathname == "/"}">Home</a>
+		</li>
+		<li class="mr-3">
+		  <a class="normal-link" href="/scores" class:active="{$page.url.pathname.includes("/scores")}">Scores</a>
+		</li>
+	  </ul>
+      <span class="font-bold ml-2 text-neutral-500 dark:text-neutral-200"
+        >Score: {$score}</span
+      >
+    </div>
+</nav>
 </header>
 
+
 <style>
-
-	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
+	.active {
+		@apply inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 !text-white;
 	}
-
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
-	}
-
-	nav {
-		display: flex;
-		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
-	}
-
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
-
-	path {
-		fill: var(--background);
-	}
-
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
-	}
-
-	li {
-		position: relative;
-		height: 100%;
-	}
-
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
-	}
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 0.5rem;
-		color: var(--color-text);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
-
-	a:hover {
-		color: var(--color-theme-1);
+	.normal-link {
+		@apply inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3;
 	}
 </style>

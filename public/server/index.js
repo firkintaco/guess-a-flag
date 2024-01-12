@@ -1,6 +1,5 @@
-import { r as render, d as define_property, o as object_keys, a as render_effect, p as push$1, c as current_component_context, b as pop$1, e as array_from, f as destroy_signal, g as push, h as copy_payload, i as assign_payload, j as bind_props, k as pop, s as source, l as is_array, m as set, u as update, n as effect_active, q as updating_derived, t as get_descriptor, v as mutable_source, w as get, U as UNINITIALIZED, x as object_assign, y as flushSync, z as create_anchor, A as decode_pathname, B as has_data_suffix, C as strip_data_suffix, D as decode_params, E as normalize_path, F as disable_search, G as add_data_suffix, H as make_trackable, I as resolve } from './chunks/exports-6c917f99.js';
-import { s as setContext } from './chunks/main-client-d5be06f2.js';
-import { r as readable, w as writable } from './chunks/index2-485a21d1.js';
+import { r as render, d as define_property, o as object_keys, a as render_effect, p as push$1, c as current_component_context, b as pop$1, e as array_from, f as destroy_signal, g as push, s as setContext, h as copy_payload, i as assign_payload, j as bind_props, k as pop, l as source, m as is_array, n as set, u as update, q as effect_active, t as updating_derived, v as get_descriptor, w as mutable_source, x as get, U as UNINITIALIZED, y as object_assign, z as flushSync, A as create_anchor, B as decode_pathname, C as has_data_suffix, D as strip_data_suffix, E as decode_params, F as normalize_path, G as disable_search, H as add_data_suffix, I as make_trackable, J as resolve } from './chunks/exports-28a1050a.js';
+import { w as writable, r as readable } from './chunks/index2-485a21d1.js';
 
 let base = "";
 let assets = base;
@@ -717,7 +716,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "1dsvx2x"
+  version_hash: "87rx7c"
 };
 function get_hooks() {
   return {};

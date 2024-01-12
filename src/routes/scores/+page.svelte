@@ -15,24 +15,16 @@
     <title>Highscores</title>
 </svelte:head>
 
-<section class="container mx-auto">
-    <h1 class="text-2xl">Highscores</h1>
-    <table class="table-auto w-full border border-separate">
-        <thead>
-            <tr>
-                <td class="font-bold">ID</td>
-                <td class="font-bold">Score</td>
-            </tr>
-        </thead>
-        <tbody>
-            {#if scores !== null}
-            {#each scores as score}
-                <tr class="p-2">
-                    <td>{score.id}</td>
-                    <td>{score.score}</td>
-                    </tr>
-            {/each}    
-            {/if}
-        </tbody>
-        </table>
+<section class="container max-w-md mx-auto">
+    <h2 class="mb-2 text-2xl font-semibold text-gray-900 dark:text-white">Highscores</h2>
+    <ol class="max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">
+
+    {#if scores !== null}
+    {#each scores as score}
+    <li>
+        <span class="font-semibold text-gray-900 dark:text-white">{score.id}</span> with <span class="font-semibold text-gray-900 dark:text-white">{score.score}</span> points
+        </li>
+        {/each}    
+        {/if}
+        </ol>
 </section>

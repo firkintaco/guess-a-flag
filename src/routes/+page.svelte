@@ -27,10 +27,10 @@
 
 <section class="container mx-auto">
 {#if $isLoading}
-	<h1>Loading</h1>
+	<h1 class="text-center">Loading</h1>
 {:else}
 	{#if $countryId >= $countries.length}
-	<h1>Refresh page to start again!</h1>
+	<h1 class="text-center">Refresh page to start again!</h1>
 	{:else}
 		{#if $countries.length !== 0}
 			<FlagCard country={$countries[$countryId]} fetchData={fetchData}/>

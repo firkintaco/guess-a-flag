@@ -773,6 +773,15 @@ function escape_text(value) {
   const escaped = escape(value);
   return escaped === "" ? " " : escaped;
 }
+function attr(name, value, boolean) {
+  if (value == null || !value && boolean || value === "" && name === "class")
+    return "";
+  const assignment = boolean ? "" : `="${escape(value, true)}"`;
+  return ` ${name}${assignment}`;
+}
+function stringify(value) {
+  return typeof value === "string" ? value : value == null ? "" : value + "";
+}
 function store_get(store_values, store_name, store) {
   if (store_name in store_values && store_values[store_name][0] === store) {
     return store_values[store_name][2];
@@ -813,6 +822,19 @@ function bind_props(props_parent, props_now) {
 function create_anchor(payload) {
   const depth = payload.anchor++;
   return `<!--ssr:${depth}-->`;
+}
+
+function getContext(key) {
+  const context_map = get_or_init_context_map();
+  return (
+    /** @type {T} */
+    context_map.get(key)
+  );
+}
+function setContext(key, context) {
+  const context_map = get_or_init_context_map();
+  context_map.set(key, context);
+  return context;
 }
 
 const internal = new URL("sveltekit-internal://");
@@ -946,5 +968,5 @@ const valid_layout_exports = /* @__PURE__ */ new Set([
 const valid_layout_server_exports = /* @__PURE__ */ new Set([...valid_layout_exports]);
 /* @__PURE__ */ new Set([...valid_layout_server_exports, "actions", "entries"]);
 
-export { decode_pathname as A, has_data_suffix as B, strip_data_suffix as C, decode_params as D, normalize_path as E, disable_search as F, add_data_suffix as G, make_trackable as H, resolve as I, slot as J, escape as K, store_get as L, unsubscribe_stores as M, escape_text as N, get_or_init_context_map as O, UNINITIALIZED as U, render_effect as a, pop$1 as b, current_component_context as c, define_property as d, array_from as e, destroy_signal as f, push as g, copy_payload as h, assign_payload as i, bind_props as j, pop as k, is_array as l, set as m, effect_active as n, object_keys as o, push$1 as p, updating_derived as q, render as r, source as s, get_descriptor as t, update as u, mutable_source as v, get as w, object_assign as x, flushSync as y, create_anchor as z };
-//# sourceMappingURL=exports-6c917f99.js.map
+export { create_anchor as A, decode_pathname as B, has_data_suffix as C, strip_data_suffix as D, decode_params as E, normalize_path as F, disable_search as G, add_data_suffix as H, make_trackable as I, resolve as J, slot as K, attr as L, stringify as M, store_get as N, escape as O, unsubscribe_stores as P, escape_text as Q, getContext as R, UNINITIALIZED as U, render_effect as a, pop$1 as b, current_component_context as c, define_property as d, array_from as e, destroy_signal as f, push as g, copy_payload as h, assign_payload as i, bind_props as j, pop as k, source as l, is_array as m, set as n, object_keys as o, push$1 as p, effect_active as q, render as r, setContext as s, updating_derived as t, update as u, get_descriptor as v, mutable_source as w, get as x, object_assign as y, flushSync as z };
+//# sourceMappingURL=exports-28a1050a.js.map
