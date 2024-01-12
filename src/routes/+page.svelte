@@ -1,5 +1,5 @@
 <script>
-	import {isLoading, countries, countryId, uuid, isError} from '../stores/store.js';
+	import {isLoading, countries, countryId, uuid, isError, score, isQuestionAnswered} from '../stores/store.js';
 	import FlagCard from '../componets/FlagCard.svelte';
 	import { onMount } from 'svelte';
 	let data;
@@ -13,6 +13,20 @@
 		$countryId = 0;
 		$isLoading = false;
 	}
+
+	const handleRestart = async () => {
+        try {
+            await fetch(`/api/scores?id=${$uuid}&score=${$score}`, {
+                method: "POST",
+            })
+            
+        } catch (error) {
+            $isError = error;
+        }
+        fetchData();
+        $isQuestionAnswered = false;
+        $score = 0;
+    }
 
 	onMount(async ()=>{
 		await fetchData()
@@ -34,6 +48,7 @@
 {:else}
 	{#if $countryId >= $countries.length}
 	<h1 class="text-center">Refresh page to start again!</h1>
+	<button class="w-full bg-red-700 rounded font-bold text-white shadow px-6 py-4" on:click={handleRestart}>Restart</button> 
 	{:else}
 		{#if $countries.length !== 0}
 			<FlagCard country={$countries[$countryId]} fetchData={fetchData}/>
