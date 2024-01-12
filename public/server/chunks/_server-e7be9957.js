@@ -34,9 +34,13 @@ const POST = async ({ url }) => {
     return new Response("OK", { status: 200 });
   } catch (error) {
     console.log("Error adding score " + error);
+    const parsedNumber = Number(score);
+    const userCollection = collection(db, "scores");
+    const userRef = doc(userCollection, id);
+    await setDoc(userRef, { id, score: parsedNumber });
     return new Response("Fail", { status: 400 });
   }
 };
 
 export { GET, POST };
-//# sourceMappingURL=_server-5f7377c3.js.map
+//# sourceMappingURL=_server-e7be9957.js.map

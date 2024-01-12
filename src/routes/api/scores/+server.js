@@ -46,6 +46,10 @@ export const POST = async ({ url }) => {
 		return new Response('OK', { status: 200 });
 	} catch (error) {
 		console.log('Error adding score ' + error);
+		const parsedNumber = Number(score);
+		const userCollection = collection(db, 'scores');
+		const userRef = doc(userCollection, id);
+		await setDoc(userRef, { id, score: parsedNumber });
 		return new Response('Fail', { status: 400 });
 	}
 };
