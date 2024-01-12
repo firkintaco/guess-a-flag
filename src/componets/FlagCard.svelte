@@ -32,10 +32,10 @@
         {/key}
     </div>
     {#if $isCorrect}
-    <button class="w-full bg-blue-700 px-6 py-4 rounded font-bold text-white shadow" on:click={handleNextCountry}>Next country</button>
+    <button class="w-full bg-green-800 px-6 py-4 rounded font-bold text-white shadow" on:click={handleNextCountry}>Next country</button>
     {/if}
     {#if !$isCorrect && $isQuestionAnswered}
-    <button class="w-full bg-blue-700 rounded font-bold text-white shadow px-6 py-4" on:click={handleRestart}>Restart</button> 
+    <button class="w-full bg-red-700 rounded font-bold text-white shadow px-6 py-4" on:click={handleRestart}>Restart</button> 
     {/if}
     </div>
   </div>
