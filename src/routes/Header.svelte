@@ -1,17 +1,11 @@
 <script>
 	import { page } from '$app/stores';
 	import {score} from '../stores/store.js'
-	import {signOut} from 'firebase/auth';
-	import {auth} from '$lib/firebase/firebase.app.js'
 	import {session} from '$lib/session.js'
+	import NavLink from '../componets/nav/NavLink.svelte';
+	import LogOutButton from '../componets/nav/LogOutButton.svelte';
 
 
-	const handleLogout = async () => {
-		signOut(auth).then(()=>{
-			$session = undefined;
-			console.log($session)
-		}).catch(error=>console.log(error))
-	}
 </script>
 
 <header class="shadow px-4 bg-[#FBFBFB]">
@@ -27,26 +21,14 @@
 
       <!-- Left links -->
 	  <ul class="flex">
-		<li class="mr-3">
-		  <a class="normal-link" href="/" class:active="{$page.url.pathname == "/"}">Home</a>
-		</li>
-		<li class="mr-3">
-		  <a class="normal-link" href="/scores" class:active="{$page.url.pathname.includes("/scores")}">Scores</a>
-		</li>
+		<NavLink href="/" text="Home" />
+		<NavLink href="/scores" text="Scores" />
 		{#if $session}
-			<li class="mr-3">
-				<a class="normal-link" href="/profile" class:active="{$page.url.pathname.includes('/profile')}">Profile</a>
-			</li>
-			<li>
-				<button class="normal-link" on:click={handleLogout}>Logout</button>
-			</li>
+			<NavLink href="/profile" text="Profile" />
+			<LogOutButton />
 		{:else}
-			<li>
-				<a class="normal-link" href="/auth/login" class:active="{$page.url.pathname.includes("/auth/login")}">Log In</a>
-			</li>
-			<li>
-				<a class="normal-link" href="/auth/register" class:active="{$page.url.pathname.includes("/auth/register")}">Register</a>
-			</li>
+			<NavLink href="/auth/login" text="Login" />
+			<NavLink href="/auth/register" text="Register" />
 		{/if}
 	  </ul>
       <span class="font-bold ml-2 text-neutral-500 dark:text-neutral-200"
@@ -56,12 +38,3 @@
 </nav>
 </header>
 
-
-<style>
-	.active {
-		@apply inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 !text-white;
-	}
-	.normal-link {
-		@apply inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3;
-	}
-</style>

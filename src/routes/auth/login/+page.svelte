@@ -34,27 +34,29 @@
   };
 </script>
 
+<div class="container">
 <form
-  class="flex flex-col gap-4 p-8 space-y-4 bg-white sm:w-10/12"
+  class="bg-blue-500 text-center w-1/3 px-3 py-4 text-black mx-auto rounded"
   on:submit|preventDefault={login}
 >
   <input
     type="email"
     placeholder="Email"
-    class="px-4 py-2 border border-gray-300 rounded-md"
+    class="block w-full mx-auto text-sm py-2 px-3 rounded text-black"
     required
     bind:value={email}
   />
   <input
     type="password"
     placeholder="Password"
-    class="px-4 py-2 border border-gray-300 rounded-md"
+    class="block w-full mx-auto text-sm py-2 px-3 rounded my-3 text-black"
     required
     bind:value={password}
   />
  
-  <button type="submit" class="default-action">Login</button>
+  <button type="submit" class="bg-blue text-white font-bold py-2 px-4 rounded border block mx-auto w-full">Login</button>
   {#if !success && success !== undefined}
-    <div class="p-8 text-red-500 bg-red-100">There was an error logging in. Please try again.</div>
+    <div class="mt-3 p-8 text-red-500 bg-red-100">There was an error logging in. Please try again.</div>
   {/if}
 </form>
+</div>

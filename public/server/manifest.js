@@ -10,13 +10,13 @@ return {
 	assets: new Set(["favicon.png","robots.txt"]),
 	mimeTypes: {".png":"image/png",".txt":"text/plain"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.0J_jjIu0.js","app":"_app/immutable/entry/app.PHpsX-IO.js","imports":["_app/immutable/entry/start.0J_jjIu0.js","_app/immutable/chunks/entry.L8c4YHrr.js","_app/immutable/chunks/runtime.zQU0RrEG.js","_app/immutable/chunks/index.K1lkvplB.js","_app/immutable/chunks/control.pJ1mnnAb.js","_app/immutable/entry/app.PHpsX-IO.js","_app/immutable/chunks/runtime.zQU0RrEG.js","_app/immutable/chunks/disclose-version.ImRONEDe.js","_app/immutable/chunks/main-client.ULUgH7-b.js"],"stylesheets":[],"fonts":[],"uses_env_dynamic_public":false},
+		client: {"start":"_app/immutable/entry/start.yQjqpAb7.js","app":"_app/immutable/entry/app._roBdgWD.js","imports":["_app/immutable/entry/start.yQjqpAb7.js","_app/immutable/chunks/entry.0_R-IXl7.js","_app/immutable/chunks/runtime.zQU0RrEG.js","_app/immutable/chunks/index.K1lkvplB.js","_app/immutable/chunks/control.pJ1mnnAb.js","_app/immutable/entry/app._roBdgWD.js","_app/immutable/chunks/runtime.zQU0RrEG.js","_app/immutable/chunks/disclose-version.Lxp0NizN.js","_app/immutable/chunks/main-client.ULUgH7-b.js"],"stylesheets":[],"fonts":[],"uses_env_dynamic_public":false},
 		nodes: [
-			__memo(() => import('./chunks/0-4af6f059.js')),
-			__memo(() => import('./chunks/1-47de1202.js')),
-			__memo(() => import('./chunks/3-875cb21f.js')),
-			__memo(() => import('./chunks/4-d8cdde89.js')),
-			__memo(() => import('./chunks/5-4dd8ad93.js'))
+			__memo(() => import('./chunks/0-454a4205.js')),
+			__memo(() => import('./chunks/1-1c5f846c.js')),
+			__memo(() => import('./chunks/3-c8efdb6e.js')),
+			__memo(() => import('./chunks/4-cde8d4f4.js')),
+			__memo(() => import('./chunks/5-c8445618.js'))
 		],
 		routes: [
 			{
@@ -24,14 +24,14 @@ return {
 				pattern: /^\/api\/?$/,
 				params: [],
 				page: null,
-				endpoint: __memo(() => import('./chunks/_server-e4ebed3a.js'))
+				endpoint: __memo(() => import('./chunks/_server-ef5df37d.js'))
 			},
 			{
 				id: "/api/scores",
 				pattern: /^\/api\/scores\/?$/,
 				params: [],
 				page: null,
-				endpoint: __memo(() => import('./chunks/_server-e7be9957.js'))
+				endpoint: __memo(() => import('./chunks/_server-3fcbde45.js'))
 			},
 			{
 				id: "/auth/login",
