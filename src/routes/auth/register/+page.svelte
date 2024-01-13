@@ -32,7 +32,7 @@
 </script>
 
 <form
-  class="bg-blue-500 text-center w-1/3 px-3 py-4 text-black mx-auto rounded"
+  class="bg-blue-500 text-center w-1/3 sm:w-full px-3 py-4 text-black mx-auto rounded"
   on:submit|preventDefault={register}
 >
 <input
