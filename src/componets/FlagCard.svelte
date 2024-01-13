@@ -1,6 +1,8 @@
 <script>
 	import AnswerOptionButton from "./AnswerOptionButton.svelte";
-    import {isCorrect,countryId, score, isQuestionAnswered, isLoading, uuid, isError} from '../stores/store.js';
+    import {isCorrect,countryId, score, isQuestionAnswered, isLoading, isError} from '../stores/store.js';
+	import RestartButton from "./RestartButton.svelte";
+	import NextButton from "./NextButton.svelte";
     export let country;
     export let fetchData;
     let isAlreadyAnswered = false;
@@ -10,19 +12,7 @@
         $score++;
         $isQuestionAnswered = false;
     }
-    const handleRestart = async () => {
-        try {
-            await fetch(`/api/scores?id=${$uuid}&score=${$score}`, {
-                method: "POST",
-            })
-            
-        } catch (error) {
-            $isError = error;
-        }
-        fetchData();
-        $isQuestionAnswered = false;
-        $score = 0;
-    }
+    
     
 </script>
 <div class="max-w-lg rounded overflow-hidden shadow-lg">
@@ -36,11 +26,7 @@
         {/each}
         {/key}
     </div>
-    {#if $isCorrect}
-    <button class="w-full bg-green-800 px-6 py-4 rounded font-bold text-white shadow" on:click={handleNextCountry}>Next country</button>
-    {/if}
-    {#if !$isCorrect && $isQuestionAnswered}
-    <button class="w-full bg-red-700 rounded font-bold text-white shadow px-6 py-4" on:click={handleRestart}>Restart</button> 
-    {/if}
+    <NextButton />
+    <RestartButton fetchData={fetchData} />
     </div>
   </div>

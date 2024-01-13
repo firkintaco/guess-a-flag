@@ -1,6 +1,5 @@
 import { writable } from 'svelte/store';
 import { persistentAtom } from '@nanostores/persistent';
-
 export const isLoading = writable(false);
 export const countries = writable([]);
 export const countryId = writable(0);

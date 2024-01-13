@@ -8,7 +8,7 @@ import {
 	orderBy,
 	limit
 } from 'firebase/firestore';
-import { db } from '../../../../firebase.app';
+import { db } from '$lib/firebase/firebase.app.js';
 
 const getUsers = async () => {
 	const userCollection = collection(db, 'scores');

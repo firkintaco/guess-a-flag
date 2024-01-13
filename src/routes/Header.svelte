@@ -1,6 +1,17 @@
 <script>
 	import { page } from '$app/stores';
 	import {score} from '../stores/store.js'
+	import {signOut} from 'firebase/auth';
+	import {auth} from '$lib/firebase/firebase.app.js'
+	import {session} from '$lib/session.js'
+
+
+	const handleLogout = async () => {
+		signOut(auth).then(()=>{
+			$session = undefined;
+			console.log($session)
+		}).catch(error=>console.log(error))
+	}
 </script>
 
 <header class="shadow px-4 bg-[#FBFBFB]">
@@ -9,9 +20,7 @@
   data-te-navbar-ref>
   <div class="flex w-full flex-wrap items-center justify-between px-3">
     <div class="ml-2">
-      <a class="text-xl text-neutral-800 dark:text-neutral-200" href="/"
-        >Guess-A-Flag</a
-      >
+      <a class="text-xl text-neutral-800 dark:text-neutral-200" href="/">Guess-A-Flag</a>
     </div>
     
 
@@ -24,6 +33,21 @@
 		<li class="mr-3">
 		  <a class="normal-link" href="/scores" class:active="{$page.url.pathname.includes("/scores")}">Scores</a>
 		</li>
+		{#if $session}
+			<li class="mr-3">
+				<a class="normal-link" href="/profile" class:active="{$page.url.pathname.includes('/profile')}">Profile</a>
+			</li>
+			<li>
+				<button class="normal-link" on:click={handleLogout}>Logout</button>
+			</li>
+		{:else}
+			<li>
+				<a class="normal-link" href="/auth/login" class:active="{$page.url.pathname.includes("/auth/login")}">Log In</a>
+			</li>
+			<li>
+				<a class="normal-link" href="/auth/register" class:active="{$page.url.pathname.includes("/auth/register")}">Register</a>
+			</li>
+		{/if}
 	  </ul>
       <span class="font-bold ml-2 text-neutral-500 dark:text-neutral-200"
         >Score: {$score}</span

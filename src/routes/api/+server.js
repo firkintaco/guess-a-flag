@@ -1,5 +1,5 @@
 import { collection, getDocs, getDoc, doc } from 'firebase/firestore';
-import { db } from '../../../firebase.app.js';
+import { db } from '$lib/firebase/firebase.app.js';
 
 const shuffle = (array) => {
 	return array.sort((a, b) => 0.5 - Math.random());
@@ -42,7 +42,6 @@ export async function GET({ url }) {
 	if (url.searchParams.get('id') && url.searchParams.get('answer')) {
 		const id = url.searchParams.get('id');
 		const answer = url.searchParams.get('answer');
-		console.log('id: ' + id);
 		const country = await getCountry(id);
 		if (country.name === answer) {
 			return Response.json({ correct: true });
@@ -52,6 +51,5 @@ export async function GET({ url }) {
 	if (url.searchParams.get('id')) {
 		return Response.json(await getCountry(url.searchParams.get('id')));
 	}
-	console.log(url);
 	return Response.json(await getCountries(db));
 }
