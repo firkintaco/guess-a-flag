@@ -19,6 +19,4 @@ const handleRestart = async () => {
     }
 </script>
 
-{#if !$isCorrect && $isQuestionAnswered}
     <button class="w-full bg-red-700 rounded font-bold text-white shadow px-6 py-4" on:click={handleRestart}>Restart</button> 
-{/if}

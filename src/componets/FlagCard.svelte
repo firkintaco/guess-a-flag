@@ -27,6 +27,8 @@
         {/key}
     </div>
     <NextButton />
+    {#if !$isCorrect && $isQuestionAnswered}
     <RestartButton fetchData={fetchData} />
+    {/if}
     </div>
   </div>
