@@ -1,5 +1,5 @@
 <script>
-	import {isLoading, countries, countryId, uuid, isError, score, isQuestionAnswered} from '../stores/store.js';
+	import {isLoading, countries, countryId, isError, score, isQuestionAnswered} from '../stores/store.js';
 	import FlagCard from '../componets/FlagCard.svelte';
 	import { onMount } from 'svelte';
 	let data;
@@ -13,20 +13,6 @@
 		$countryId = 0;
 		$isLoading = false;
 	}
-
-	const handleRestart = async () => {
-        try {
-            await fetch(`/api/scores?id=${$uuid}&score=${$score}`, {
-                method: "POST",
-            })
-            
-        } catch (error) {
-            $isError = error;
-        }
-        fetchData();
-        $isQuestionAnswered = false;
-        $score = 0;
-    }
 
 	onMount(async ()=>{
 		await fetchData()
