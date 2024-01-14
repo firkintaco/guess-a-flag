@@ -2,7 +2,6 @@
     import {signInWithEmailAndPassword} from 'firebase/auth';
     import {auth} from '$lib/firebase/firebase.app.js'
     import {goto} from '$app/navigation';
-    import {uuid} from '../../../stores/store.js'
     import {session} from '$lib/session.js'
     let email;
     let password;
@@ -31,6 +30,7 @@
         success = false;
       });
   };
+
 </script>
 
 <div class="relative flex flex-col items-center md:justify-center h-screen overflow-hidden">
