@@ -34,7 +34,7 @@
 {:else}
 	{#if $countryId >= $countries.length}
 	<h1 class="text-center">Refresh page to start again!</h1>
-	<RestartButton />
+	<RestartButton fetchData={fetchData}/>
 	{:else}
 		{#if $countries.length !== 0}
 			<FlagCard country={$countries[$countryId]} fetchData={fetchData}/>

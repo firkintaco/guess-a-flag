@@ -5,7 +5,7 @@ export let fetchData;
 
 const handleRestart = async () => {
         try {
-            await fetch(`/api/scores?id=${$session?.user ? $session.user.uid : crypto.randomUUID().toString()}&score=${$score}`, {
+            await fetch(`/api/scores?id=${$session?.user?.uid ? $session.user.uid : crypto.randomUUID().toString()}&score=${$score}`, {
                 method: "POST",
             })
             
