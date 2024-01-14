@@ -8,33 +8,55 @@
 
 </script>
 
-<header class="shadow px-4 bg-[#FBFBFB]">
- <nav
-  class="relative flex w-full flex-nowrap items-center justify-between bg-[#FBFBFB] py-2 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:flex-wrap lg:justify-start lg:py-4"
-  data-te-navbar-ref>
-  <div class="flex w-full flex-wrap items-center justify-between px-3">
-    <div class="ml-2">
-      <a class="text-xl text-neutral-800 dark:text-neutral-200" href="/">Guess-A-Flag</a>
-    </div>
-    
-
-
-      <!-- Left links -->
-	  <ul class="flex">
+<header class="shadow px-4 bg-base-100">
+<div class="navbar">
+	<div class="navbar-start">
+	  <div class="dropdown">
+		<div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+		  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+		</div>
+		<ul class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+			<NavLink href="/" text="Home" />
+			<NavLink href="/scores" text="Scores" />
+		  <li>
+			<span>{$session?.user?.displayName ? $session.user.displayName : "User"}</span>
+			<ul class="p-2">
+				{#if $session?.loggedIn}
+				<NavLink href="/profile" text="Profile" />
+				<LogOutButton />
+			{:else}
+				<NavLink href="/auth/login" text="Login" />
+				<NavLink href="/auth/register" text="Register" />
+			{/if}
+			</ul>
+		  </li>
+		</ul>
+	  </div>
+	  <a class="btn btn-ghost text-xl font-logoFont" href="/">Guess-A-Flag</a>
+	</div>
+	<div class="navbar-center hidden lg:flex">
+	  <ul class="menu menu-horizontal px-1">
 		<NavLink href="/" text="Home" />
 		<NavLink href="/scores" text="Scores" />
-		{#if $session}
-			<NavLink href="/profile" text="Profile" />
-			<LogOutButton />
-		{:else}
-			<NavLink href="/auth/login" text="Login" />
-			<NavLink href="/auth/register" text="Register" />
-		{/if}
+		<li>
+		  <details>
+			<summary>{$session?.user?.displayName ? $session.user.displayName : "User"}</summary>
+			<ul class="p-2 z-[1]">
+				{#if $session?.loggedIn}
+				<NavLink href="/profile" text="Profile" />
+				<LogOutButton />
+			{:else}
+				<NavLink href="/auth/login" text="Login" />
+				<NavLink href="/auth/register" text="Register" />
+			{/if}
+			</ul>
+		  </details>
+		</li>
 	  </ul>
-      <span class="font-bold ml-2 text-neutral-500 dark:text-neutral-200"
-        >Score: {$score}</span
-      >
-    </div>
-</nav>
+	</div>
+	<div class="navbar-end">
+	  <span class="btn">Score: {$score}</span>
+	</div>
+  </div>
 </header>
 

@@ -12,7 +12,6 @@
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         const {user} = result;
-        $uuid = user.uid,
         session.set({
             loggedIn: true,
             user: {
@@ -34,29 +33,26 @@
   };
 </script>
 
-<div class="container">
-<form
-  class="bg-blue-500 text-center w-full md:w-1/3 px-3 py-4 text-black mx-auto rounded"
-  on:submit|preventDefault={login}
->
-  <input
-    type="email"
-    placeholder="Email"
-    class="block w-full mx-auto text-sm py-2 px-3 rounded text-black"
-    required
-    bind:value={email}
-  />
-  <input
-    type="password"
-    placeholder="Password"
-    class="block w-full mx-auto text-sm py-2 px-3 rounded my-3 text-black"
-    required
-    bind:value={password}
-  />
- 
-  <button type="submit" class="bg-blue text-white font-bold py-2 px-4 rounded border block mx-auto w-full">Login</button>
-  {#if !success && success !== undefined}
-    <div class="mt-3 p-8 text-red-500 bg-red-100">There was an error logging in. Please try again.</div>
-  {/if}
-</form>
+<div class="relative flex flex-col items-center md:justify-center h-screen overflow-hidden">
+  <div class="w-full p-6 bg-white border-t-4 border-gray-600 rounded-md shadow-md border-top md:max-w-md">
+      <h1 class="text-3xl font-semibold text-center text-gray-700">Login</h1>
+      <form class="space-y-4" on:submit|preventDefault={login}>
+          <div>
+              <label class="label" for="email">
+                  <span class="text-base label-text">Email</span>
+              </label>
+              <input type="text" placeholder="Email Address" id="email" class="w-full input input-bordered" bind:value={email} required/>
+          </div>
+          <div>
+              <label class="label" for="password">
+                  <span class="text-base label-text">Password</span>
+              </label>
+              <input type="password" placeholder="Enter Password"
+                  class="w-full input input-bordered" id="password" bind:value={password} required/>
+          </div>
+          <div>
+              <button type="submit" class="btn btn-block">Login</button>
+          </div>
+      </form>
+  </div>
 </div>

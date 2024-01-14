@@ -5,12 +5,13 @@ export let fetchData;
 
 const handleRestart = async () => {
         try {
-            await fetch(`/api/scores?id=${$session.user ? $session.user.uid : crypto.randomUUID().toString()}&score=${$score}`, {
+            await fetch(`/api/scores?id=${$session?.user ? $session.user.uid : crypto.randomUUID().toString()}&score=${$score}`, {
                 method: "POST",
             })
             
         } catch (error) {
             $isError = error;
+            console.log(error)
         }
         fetchData();
         $isQuestionAnswered = false;

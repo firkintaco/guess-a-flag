@@ -15,7 +15,7 @@
     
     
 </script>
-<div class="max-w-lg rounded overflow-hidden shadow-lg">
+<div class="max-w-lg rounded overflow-hidden shadow-lg bg-white">
     <img class="w-full" src="https://flagcdn.com/h240/{country.code}.png" height="240" width="360" alt="{country.code}">
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">What country is this?</div>

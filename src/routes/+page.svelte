@@ -31,7 +31,6 @@
 	onMount(async ()=>{
 		await fetchData()
 	});
-	console.log(data);
 </script>
 
 <svelte:head>
