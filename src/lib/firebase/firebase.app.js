@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-import { getAuth, setPersistence, browserLocalPersistence } from 'firebase/auth';
+import { getFirestore, doc, setDoc, Timestamp, updateDoc } from 'firebase/firestore';
+import { getAuth, setPersistence, browserLocalPersistence, updateProfile } from 'firebase/auth';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -23,3 +23,23 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 setPersistence(auth, browserLocalPersistence);
+
+export const addUserData = async (uid, displayName, email) => {
+	try {
+		await setDoc(doc(db, 'users', uid), { uid, displayName, email, createdAt: Timestamp.now() });
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+export const updateUserName = async (newName) => {
+	try {
+		await updateProfile(auth.currentUser, {
+			displayName: newName
+		});
+		const ref = doc(db, 'users', auth.currentUser.uid);
+		await updateDoc(ref, { displayName: newName });
+	} catch (error) {
+		console.log(error);
+	}
+};

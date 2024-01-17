@@ -1,9 +1,6 @@
 import { collection, getDocs, getDoc, doc } from 'firebase/firestore';
 import { db } from '$lib/firebase/firebase.app.js';
-
-const shuffle = (array) => {
-	return array.sort((a, b) => 0.5 - Math.random());
-};
+import { shuffle } from '$lib/utils.js';
 
 async function getCountries(db) {
 	const countriesCollection = collection(db, 'countries');

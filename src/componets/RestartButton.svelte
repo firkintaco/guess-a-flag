@@ -4,15 +4,18 @@ import {score, isError, isQuestionAnswered, isCorrect} from '../stores/store.js'
 export let fetchData;
 
 const handleRestart = async () => {
+    if($session?.user?.uid){
         try {
-            await fetch(`/api/scores?id=${$session?.user?.uid ? $session.user.uid : crypto.randomUUID().toString()}&score=${$score}`, {
+            await fetch(`/api/scores`, {
                 method: "POST",
+                body: JSON.stringify({userId: $session.user.uid, displayName: $session.user.displayName, score: $score})
             })
             
         } catch (error) {
             $isError = error;
             console.log(error)
         }
+    }
         fetchData();
         $isQuestionAnswered = false;
         $score = 0;

@@ -3,6 +3,7 @@
 	import Header from './Header.svelte';
 	import './styles.css';
 	import { session} from '$lib/session.js'
+	import {page} from '$app/stores'
 
 	export let data;
 
@@ -27,7 +28,9 @@
 <div class="app bg-gray-200">
 	<Header />
 	<main>
+		{#key $page.url.pathname}
 		<slot />
+		{/key}
 	</main>
 
 </div>

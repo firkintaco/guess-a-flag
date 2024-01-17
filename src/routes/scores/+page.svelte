@@ -2,7 +2,6 @@
     import { onMount } from 'svelte';
 	import { isLoading } from '../../stores/store';
     let scores = [];
-
     onMount(async ()=>{
         $isLoading = true;
         const response = await fetch('/api/scores').then(response => response.json())
@@ -22,7 +21,7 @@
     {#if scores !== null}
     {#each scores as score}
     <li>
-        <span class="font-semibold text-gray-900 dark:text-white">{score.id}</span> with <span class="font-semibold text-gray-900 dark:text-white">{score.score}</span> points
+        <span class="font-semibold text-gray-900 dark:text-white">{score.displayName ? score.displayName : score.userId}</span> with <span class="font-semibold text-gray-900 dark:text-white">{score.score}</span> points
         </li>
         {/each}    
         {/if}

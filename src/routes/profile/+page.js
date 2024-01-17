@@ -6,7 +6,6 @@ export const load = async () => {
 		if (!user) {
 			throw redirect(302, '/auth/login');
 		}
-		console.log(user);
 	});
 
 	unsubscribe();
