@@ -3,6 +3,7 @@
 	import FlagCard from '../../../componets/FlagCard.svelte';
 	import { onDestroy, onMount } from 'svelte';
 	import RestartButton from '../../../componets/RestartButton.svelte';
+	import { goto } from '$app/navigation';
 	export let data;
 	let country;
     let isLoading = true;
@@ -15,11 +16,15 @@
 		$countries = response;
 		country = $countries[0];
 		$countryId = 0;
-		isLoading = false;
+        if(response.error)
+{
+ goto("/not-found")
+}		isLoading = false;
 	}
 
 	onMount(async ()=>{
-		await fetchData()
+            await fetchData()
+            
 	});
     onDestroy(()=>{
         $score = 0;
@@ -37,7 +42,7 @@
 <section class="container mx-auto">
 	{#if $isError}
 	<p>Error</p>
-	{/if}
+	{:else}
 {#if isLoading}
 	<h1 class="text-center">Loading</h1>
 {:else}
@@ -50,6 +55,7 @@
 		{/if}
 	{/if}
 	{/if}
+    {/if}
 </section>
 {/key}
 <style>
