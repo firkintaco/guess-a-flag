@@ -1,5 +1,6 @@
 <script>
 import {session} from '$lib/session.js'
+	import toast from 'svelte-french-toast';
 import {score, isError, isQuestionAnswered, isCorrect} from '../stores/store.js'
 export let fetchData;
 
@@ -10,9 +11,11 @@ const handleRestart = async () => {
                 method: "POST",
                 body: JSON.stringify({userId: $session.user.uid, displayName: $session.user.displayName, score: $score})
             })
+            toast.success("Score saved.")
             
         } catch (error) {
             $isError = error;
+            toast.error(error)
             console.log(error)
         }
     }

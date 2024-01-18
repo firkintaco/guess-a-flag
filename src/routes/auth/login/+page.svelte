@@ -3,6 +3,9 @@
     import {auth} from '$lib/firebase/firebase.app.js'
     import {goto} from '$app/navigation';
     import {session} from '$lib/session.js'
+    import toast from 'svelte-french-toast';
+    import {getErrorMessage} from '$lib/utils'
+	import { onMount } from 'svelte';
     let email;
     let password;
     let success = undefined
@@ -19,11 +22,12 @@
                 uid: user?.uid
             }
         })
-        console.log($session)
+        toast.success(`Hello, ${user.displayName}!`)
         goto('/profile');
       })
       .catch((error) => {
         const errorCode = error.code;
+        toast.error(getErrorMessage(error.code), {position: "bottom-center"})
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
  
@@ -31,9 +35,17 @@
       });
   };
 
+onMount(()=>{
+    if(auth.currentUser){
+        goto("/profile")
+    }
+})
 </script>
+<svelte:head>
+    <title>Login</title>
+</svelte:head>
 
-<div class="relative flex flex-col items-center md:justify-center h-screen overflow-hidden">
+<div class="relative flex flex-col items-center overflow-hidden">
   <div class="w-full p-6 bg-white border-t-4 border-gray-600 rounded-md shadow-md border-top md:max-w-md">
       <h1 class="text-3xl font-semibold text-center text-gray-700">Login</h1>
       <form class="space-y-4" on:submit|preventDefault={login}>

@@ -4,6 +4,7 @@
 	import './styles.css';
 	import { session} from '$lib/session.js'
 	import {page} from '$app/stores'
+	import { Toaster } from 'svelte-french-toast';
 
 	export let data;
 
@@ -29,11 +30,11 @@
 	<Header />
 	<main>
 		{#key $page.url.pathname}
-		<slot />
+			<slot />
 		{/key}
 	</main>
-
 </div>
+	<Toaster />
 
 <style>
 	.app {

@@ -1,9 +1,10 @@
 <script>
     import {goto} from '$app/navigation';
-
+    import {getErrorMessage} from '$lib/utils'
     import {createUserWithEmailAndPassword} from 'firebase/auth';
     import {auth, addUserData, updateUserName} from '$lib/firebase/firebase.app.js';
     import {session} from '$lib/session.js'
+	import toast from 'svelte-french-toast';
     let email;
     let password;
     let displayName;
@@ -30,13 +31,17 @@
           }).catch((error)=>{
             const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+        toast.error(getErrorMessage(errorCode), {position: "bottom-center"})
             success= false;
         })
     }
-</script>
 
-<div class="relative flex flex-col items-center md:justify-center h-screen overflow-hidden">
+</script>
+<svelte:head>
+    <title>Register</title>
+</svelte:head>
+
+<div class="relative flex flex-col items-center md:justify-center max-h-screen overflow-hidden">
   <div class="w-full p-6 bg-white border-t-4 border-gray-600 rounded-md shadow-md border-top md:max-w-md">
       <h1 class="text-3xl font-semibold text-center text-gray-700">Register</h1>
       <form class="space-y-4" on:submit|preventDefault={register}>
@@ -44,7 +49,7 @@
               <label class="label" for="username">
                   <span class="text-base label-text">Username</span>
               </label>
-              <input type="text" placeholder="Email Address"  id="username"class="w-full input input-bordered" bind:value={displayName} required/>
+              <input type="text" placeholder="Username"  id="username"class="w-full input input-bordered" bind:value={displayName} required/>
           </div>
           <div>
               <label class="label" for="email">

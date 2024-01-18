@@ -1,8 +1,9 @@
-import { r as render, d as define_property, o as object_keys, a as render_effect, p as push$1, c as current_component_context, b as pop$1, e as array_from, f as destroy_signal, g as push, h as copy_payload, i as assign_payload, j as bind_props, k as pop, s as source, l as is_array, m as set, u as update, n as effect_active, q as updating_derived, t as get_descriptor, v as mutable_source, w as get, U as UNINITIALIZED, x as object_assign, y as flushSync, z as create_anchor } from './chunks/index3-759fa29f.js';
-import { s as setContext } from './chunks/main-client-dcc9bbfb.js';
+import { r as render, d as define_property, o as object_keys, a as render_effect, p as push$1, c as current_component_context, b as pop$1, e as array_from, f as destroy_signal, g as push, h as copy_payload, i as assign_payload, j as bind_props, k as pop, s as source, l as is_array, m as set, u as update, n as effect_active, q as updating_derived, t as get_descriptor, v as mutable_source, w as get, U as UNINITIALIZED, x as object_assign, y as flushSync, P as PassiveDelegatedEvents, z as create_anchor } from './chunks/index3-1a6115b8.js';
+import { s as setContext } from './chunks/main-client-0b78d9dd.js';
 import { H as HttpError, j as json, t as text, R as Redirect, S as SvelteKitError, A as ActionFailure } from './chunks/index-460ecbc6.js';
 import { d as decode_pathname, h as has_data_suffix, s as strip_data_suffix, a as decode_params, n as normalize_path, b as disable_search, c as add_data_suffix, m as make_trackable, r as resolve } from './chunks/exports-4ef2d035.js';
-import { r as readable, w as writable } from './chunks/index2-485a21d1.js';
+import { r as readable, w as writable } from './chunks/index2-8667a1bf.js';
+import './chunks/utils2-de403b1a.js';
 
 let base = "";
 let assets = base;
@@ -23,7 +24,6 @@ function set_public_env(environment) {
 function set_safe_public_env(environment) {
   safe_public_env = environment;
 }
-const PassiveDelegatedEvents = ["touchstart", "touchmove", "touchend"];
 const STATE_SYMBOL = Symbol("$state");
 const object_prototype = Object.prototype;
 const array_prototype = Array.prototype;
@@ -719,7 +719,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "gzk7zk"
+  version_hash: "yy69r1"
 };
 function get_hooks() {
   return {};

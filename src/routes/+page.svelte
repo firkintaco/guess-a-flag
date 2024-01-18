@@ -14,7 +14,7 @@
 		$countryId = 0;
 		$isLoading = false;
 	}
-
+	
 	onMount(async ()=>{
 		await fetchData()
 	});
