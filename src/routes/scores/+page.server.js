@@ -1,6 +1,6 @@
 import { db } from '$lib/firebase/firebase.app';
 import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
-export const prerender = true;
+export const prerender = false;
 
 const getScores = async () => {
 	const userCollection = collection(db, 'scores');
